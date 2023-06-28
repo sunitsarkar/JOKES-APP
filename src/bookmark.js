@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Emoji from "react-emoji-render";
 import {  useNavigate } from "react-router-dom";
@@ -7,8 +7,8 @@ import {  useNavigate } from "react-router-dom";
 export default function Bookmark(){
     const data=JSON.parse(localStorage.getItem("bookmark"))
     // console.log(data)
-   const location=window.location;
     const navigate=useNavigate();
+    const [p,setP]=useState(true)
 
     if(data){
         return <div>
@@ -28,7 +28,7 @@ export default function Bookmark(){
       </motion.div>
         <button className="btn" onClick={()=>{
             localStorage.removeItem('bookmark');
-            location.reload()
+            setP(!p)
         }}>clear</button>
         <motion.button
         whileHover={{ scale: 1.1 }}
