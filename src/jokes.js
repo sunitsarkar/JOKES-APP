@@ -10,6 +10,7 @@ export default function Jokes() {
   const [temp, setTemp] = useState(true);
   const navigate = useNavigate();
   const [newjoke, setNewjoke] = useState(false);
+  const [show, setShow] = useState(false);
 
 
 
@@ -18,6 +19,13 @@ export default function Jokes() {
     axios.get(api).then((res) => {
       //   console.log(res.data);
       setData(res.data);
+    }).then(() => {
+      if (show) {
+        setNewjoke(true)
+        setTimeout(() => {
+          setNewjoke(false)
+        }, 1800);
+      }
     })
   }, [temp]);
   // console.log(data)
@@ -32,10 +40,7 @@ export default function Jokes() {
 
   const handelNewjoke = () => {
     setTemp(!temp);
-    setNewjoke(true)
-    setTimeout(() => {
-      setNewjoke(false)
-    }, 1800);
+    setShow(true)
   };
 
   if (data) {
@@ -92,7 +97,7 @@ export default function Jokes() {
           </motion.button>
         </div>
       </motion.div>
-      <br/><br/>
+      <br /><br />
       <AnimatePresence>
         {newjoke && <motion.p
           initial={{ y: -1000 }}
