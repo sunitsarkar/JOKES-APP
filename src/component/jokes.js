@@ -1,5 +1,5 @@
 import axios from 'axios';
-import './App.css';
+import '../App.css';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Emoji from 'react-emoji-render';
@@ -35,7 +35,14 @@ export default function Jokes() {
   }
 
   const addBookmark = () => {
-    window.localStorage.setItem(`bookmark`, JSON.stringify(data));
+    // window.localStorage.setItem(`bookmark`, JSON.stringify(data));
+    if(localStorage.bookmarks){
+      localStorage.bookmarks = `${localStorage.bookmarks}$${JSON.stringify(data)}`;
+      console.log(localStorage.bookmarks)
+  }else{
+      localStorage.bookmarks = JSON.stringify(data);
+      
+  }
   }
 
   const handelNewjoke = () => {

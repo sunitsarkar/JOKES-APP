@@ -1,8 +1,8 @@
 
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Jokes from './jokes';
-import Bookmark from './bookmark';
+import Jokes from './component/jokes';
+import Bookmark from './component/bookmark';
 
 function App() {
     return (<div className="App">
