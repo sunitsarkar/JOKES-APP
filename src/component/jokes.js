@@ -38,7 +38,7 @@ export default function Jokes() {
     // window.localStorage.setItem(`bookmark`, JSON.stringify(data));
     if(localStorage.bookmarks){
       localStorage.bookmarks = `${localStorage.bookmarks}$${JSON.stringify(data)}`;
-      console.log(localStorage.bookmarks)
+      // console.log(localStorage.bookmarks)
   }else{
       localStorage.bookmarks = JSON.stringify(data);
       
