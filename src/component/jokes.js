@@ -11,6 +11,7 @@ export default function Jokes() {
   const navigate = useNavigate();
   const [newjoke, setNewjoke] = useState(false);
   const [show, setShow] = useState(false);
+  const [bookmark, setBookmark] = useState(false)
 
 
 
@@ -36,13 +37,17 @@ export default function Jokes() {
 
   const addBookmark = () => {
     // window.localStorage.setItem(`bookmark`, JSON.stringify(data));
-    if(localStorage.bookmarks){
+    setBookmark(true);
+    setTimeout(() => {
+      setBookmark(false)
+    }, 1800);
+    if (localStorage.bookmarks) {
       localStorage.bookmarks = `${localStorage.bookmarks}$${JSON.stringify(data)}`;
       // console.log(localStorage.bookmarks)
-  }else{
+    } else {
       localStorage.bookmarks = JSON.stringify(data);
-      
-  }
+
+    }
   }
 
   const handelNewjoke = () => {
@@ -55,7 +60,7 @@ export default function Jokes() {
       <motion.h1
         initial={{ y: -200 }}
         animate={{ y: 0 }}
-        transition={{ type: "spring", duration: 0.5 }}
+        transition={{ type: "spring", duration: 1.5 }}
         whileHover={{ scale: 1.1 }}
         id='title'
       >
@@ -111,6 +116,13 @@ export default function Jokes() {
           animate={{ y: 0 }}
           exit={{ y: 100 }}
         >Here is a new joke <Emoji text=":smiley:" /> </motion.p>}
+      </AnimatePresence>
+      <AnimatePresence>
+        {bookmark && <motion.p
+          initial={{ y: -1000 }}
+          animate={{ y: 0 }}
+          exit={{ y: 100 }}
+        >Joke bookmarked successful <Emoji text=":smiley:" /> </motion.p>}
       </AnimatePresence>
     </div>
     );

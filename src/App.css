@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
 
-
+*{
+  background-color: #e1ebfd;
+}
 
 .App {
   text-align: center;
