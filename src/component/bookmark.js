@@ -27,7 +27,7 @@ export default function Bookmark() {
         whileHover={{ scale: 1.1 }}
         id='title'
       >
-        Jokes App
+        <u>Jokes App</u>
       </motion.h1>
       {
         data.length>0 ? <motion.div

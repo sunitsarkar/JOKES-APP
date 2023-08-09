@@ -64,7 +64,7 @@ export default function Jokes() {
         whileHover={{ scale: 1.1 }}
         id='title'
       >
-        Jokes App
+        <u>Jokes App</u>
       </motion.h1>
       <motion.div
         initial={{ y: 1000 }}
@@ -75,7 +75,8 @@ export default function Jokes() {
           <motion.div
             initial={{ x: 1000 }}
             animate={{ x: 0 }}
-            transition={{ type: "spring", duration: 1.5 }}>
+            transition={{ type: "spring", duration: 1.5 }}
+            className='jokesDiv'>
             <div id='punbox'>
               PUN<Emoji text=":smiley:" />: {<h3>{data.setup}</h3>}
             </div>
