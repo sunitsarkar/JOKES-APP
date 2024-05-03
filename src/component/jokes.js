@@ -56,7 +56,7 @@ export default function Jokes() {
   };
 
   if (data) {
-    return (<div className="App">
+    return (<div className="jokes">
       <motion.h1
         initial={{ y: -200 }}
         animate={{ y: 0 }}
@@ -66,6 +66,7 @@ export default function Jokes() {
       >
         <u>Jokes App</u>
       </motion.h1>
+      <br/>
       <motion.div
         initial={{ y: 1000 }}
         animate={{ y: 0 }}
@@ -84,6 +85,7 @@ export default function Jokes() {
               Punchline<Emoji text=":laughing:" />: {<p>{data.punchline}</p>}
             </div>
           </motion.div>
+          <br/>
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}

@@ -19,7 +19,7 @@ export default function Bookmark() {
   // console.log(data)
   const navigate = useNavigate();
   const [p, setP] = useState(true)
-  return <>
+  return <div className="bookmark">
   <motion.h1
         initial={{ y: -200 }}
         animate={{ y: 0 }}
@@ -29,6 +29,7 @@ export default function Bookmark() {
       >
         <u>Jokes App</u>
       </motion.h1>
+      <br/>
       {
         data.length>0 ? <motion.div
         initial={{ y: 1000 }}
@@ -91,7 +92,7 @@ export default function Bookmark() {
       </motion.button>
     </motion.div>
       }
-  </>
+  </div>
 
  
 }

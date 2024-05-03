@@ -1,12 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
 
 *{
-  background-color: #e1ebfd;
+  margin: 0;
 }
 
 .App {
   text-align: center;
-  margin-top: 100px;
+  background-image: url(./asset/background.jpg) ;
+  height: 600px;
+}
+.jokes{
+  padding-top: 100px;
+}
+.bookmark{
+  padding-top: 100px;
 }
 #title{
   font-family: "RocknRoll One", sans-serif;
