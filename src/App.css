@@ -64,3 +64,11 @@
   margin: 5px 1.1em;
   box-shadow: 2px 2px 10px #2eca36;
 }
+
+@media screen and (max-width: 480px) {
+  .App {
+    text-align: center;
+    background-image: url(./asset/background.jpg) ;
+    height: 810px;
+  }
+}
